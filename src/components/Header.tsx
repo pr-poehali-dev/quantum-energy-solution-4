@@ -29,12 +29,12 @@ export default function Header() {
           >
             Собственникам
           </button>
-          <a
-            href="#partners"
-            className="text-white hover:text-neutral-400 transition-colors duration-300 uppercase text-sm"
+          <button
+            onClick={() => navigate('/about')}
+            className="text-white hover:text-neutral-400 transition-colors duration-300 uppercase text-sm cursor-pointer"
           >
             О нас
-          </a>
+          </button>
           <button
             onClick={() => navigate('/works')}
             className="text-white hover:text-neutral-400 transition-colors duration-300 uppercase text-sm cursor-pointer"
