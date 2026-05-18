@@ -50,7 +50,7 @@ export default function Header() {
             onClick={() => navigate('/works')}
             className="text-white hover:text-neutral-400 transition-colors duration-300 uppercase text-sm cursor-pointer"
           >
-            Наши работы
+            Фото
           </button>
         </nav>
       </div>
