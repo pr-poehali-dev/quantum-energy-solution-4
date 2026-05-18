@@ -38,7 +38,7 @@ export default function Header() {
             onClick={() => navigate('/owners')}
             className="text-white hover:text-neutral-400 transition-colors duration-300 uppercase text-sm cursor-pointer"
           >
-            Собственникам
+            Наши дома
           </button>
           <button
             onClick={() => navigate('/about')}
