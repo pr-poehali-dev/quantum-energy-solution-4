@@ -46,12 +46,21 @@ export default function Works() {
           На главную
         </button>
         <div className="text-sm font-medium uppercase tracking-wide">ООО «АМК Спец»</div>
-        <button
-          onClick={() => setModalOpen(true)}
-          className="text-sm px-5 py-2 rounded-full border border-white/20 hover:bg-white/10 transition-all"
-        >
-          Связаться
-        </button>
+        <div className="flex items-center gap-4">
+          <a
+            href="tel:84162392090"
+            className="flex items-center gap-2 text-white/70 hover:text-white transition-colors text-sm"
+          >
+            <Icon name="Phone" size={14} />
+            8 (4162) 39-20-90
+          </a>
+          <button
+            onClick={() => setModalOpen(true)}
+            className="text-sm px-5 py-2 rounded-full border border-white/20 hover:bg-white/10 transition-all"
+          >
+            Связаться
+          </button>
+        </div>
       </header>
 
       {/* Content */}
