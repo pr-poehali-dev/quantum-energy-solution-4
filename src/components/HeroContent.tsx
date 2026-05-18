@@ -11,7 +11,7 @@ export default function HeroContent() {
       <main className="absolute bottom-8 left-8 z-20 max-w-lg">
         <div className="text-left">
           {/* Description */}
-          <p className="text-base font-light text-white/70 mb-4 leading-relaxed">
+          <p className="text-lg font-light text-white/70 mb-4 leading-relaxed">
             ООО «АМК Спец» специализируется на оперативном реагировании на внештатные ситуации в сфере ЖКХ.
             Обеспечиваем надёжную поддержку многоквартирных домов и организаций — современное оборудование,
             опытные специалисты и бесперебойная работа всех инженерных систем.
