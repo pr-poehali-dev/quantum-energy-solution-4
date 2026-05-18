@@ -4,7 +4,7 @@ export default function Header() {
   return (
     <header className="absolute top-0 left-0 right-0 z-11 p-6">
       <div className="flex justify-between items-center">
-        <div className="text-white text-sm uppercase tracking-wide font-medium">ООО АМК Спец</div>
+        <div className="text-white text-sm uppercase tracking-wide font-medium">ООО «АМК Спец»</div>
         <nav className="flex items-center gap-8">
           <div className="flex items-center gap-3">
             <div className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
