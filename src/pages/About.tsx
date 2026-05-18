@@ -30,7 +30,7 @@ const documents = [
   },
   {
     title: 'Свидетельство ИНН / ОГРН',
-    description: 'Реквизиты юридического лица ООО «АМК Спец»',
+    description: 'ИНН: 2801258848',
     icon: 'FileCheck',
   },
 ]
