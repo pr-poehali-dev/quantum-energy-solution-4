@@ -35,12 +35,12 @@ export default function Header() {
           >
             Партнёрам
           </a>
-          <a
-            href="#emergency"
-            className="text-white hover:text-neutral-400 transition-colors duration-300 uppercase text-sm"
+          <button
+            onClick={() => navigate('/works')}
+            className="text-white hover:text-neutral-400 transition-colors duration-300 uppercase text-sm cursor-pointer"
           >
             Наши работы
-          </a>
+          </button>
         </nav>
       </div>
     </header>
