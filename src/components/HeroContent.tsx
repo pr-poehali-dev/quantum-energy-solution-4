@@ -18,13 +18,6 @@ export default function HeroContent() {
             <span className="text-white/90 text-xs font-light relative z-10">Управляющая компания · Благовещенск, Амурская область</span>
           </div>
 
-          {/* Main Heading */}
-          <h1 className="text-5xl md:text-6xl md:leading-16 tracking-tight font-light text-white mb-4">
-            <span className="font-medium italic">Аварийно-диспетчерское</span>
-            <br />
-            <span className="font-light tracking-tight text-white">обслуживание</span>
-          </h1>
-
           {/* Description */}
           <p className="text-xs font-light text-white/70 mb-4 leading-relaxed">
             ООО «АМК Спец» специализируется на оперативном реагировании на внештатные ситуации в сфере ЖКХ.
