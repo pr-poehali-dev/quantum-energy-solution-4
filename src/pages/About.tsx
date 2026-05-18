@@ -30,7 +30,7 @@ const documents = [
   },
   {
     title: 'Свидетельство ИНН / ОГРН',
-    description: 'ИНН: 2801258848',
+    description: 'ИНН: 2801258848 · ОГРН: 1202800005704',
     icon: 'FileCheck',
   },
 ]
