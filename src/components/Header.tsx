@@ -39,7 +39,7 @@ export default function Header() {
             href="#emergency"
             className="text-white hover:text-neutral-400 transition-colors duration-300 uppercase text-sm"
           >
-            Аварийная служба
+            Наши работы
           </a>
         </nav>
       </div>
