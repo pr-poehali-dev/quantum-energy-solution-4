@@ -4,9 +4,20 @@ import Icon from '@/components/ui/icon'
 import ContactModal from '@/components/ContactModal'
 
 const houses = [
-  { id: 1, address: 'ул. Кольцевая, 43', floors: 5, apartments: 40 },
-  { id: 2, address: 'ул. Ленина, 12', floors: 9, apartments: 72 },
-  { id: 3, address: 'пр. Победы, 7', floors: 5, apartments: 30 },
+  { id: 1, address: 'ул. Кольцевая, 32' },
+  { id: 2, address: 'ул. Текстильная, 25' },
+  { id: 3, address: 'ул. Пионерская, 157' },
+  { id: 4, address: 'ул. Чайковского, 155' },
+  { id: 5, address: 'ул. Чайковского, 163' },
+  { id: 6, address: 'ул. Чайковского, 167' },
+  { id: 7, address: 'ул. Чайковского, 209' },
+  { id: 8, address: 'ул. Ломоносова, 176' },
+  { id: 9, address: 'ул. Мичурина, 15' },
+  { id: 10, address: 'ул. Комсомольская, 61' },
+  { id: 11, address: 'ул. Шимановского, 46' },
+  { id: 12, address: 'ул. Шимановского, 68/5' },
+  { id: 13, address: 'Верхнеблаговещенск, ул. Ленина, 21' },
+  { id: 14, address: 'ул. Ленина, 187' },
 ]
 
 export default function Owners() {
@@ -65,7 +76,6 @@ export default function Owners() {
                 </div>
                 <div>
                   <div className="font-medium text-sm">г. Благовещенск, {house.address}</div>
-                  <div className="text-white/40 text-xs mt-0.5">{house.floors} этажей · {house.apartments} квартиры</div>
                 </div>
               </div>
               <Icon name="ChevronRight" size={16} className="text-white/30" />
