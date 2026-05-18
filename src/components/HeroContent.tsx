@@ -10,16 +10,6 @@ export default function HeroContent() {
     <>
       <main className="absolute bottom-8 left-8 z-20 max-w-lg">
         <div className="text-left">
-          <div
-            className="inline-flex items-center px-3 py-1 rounded-full bg-white/5 backdrop-blur-sm mb-4 relative"
-            style={{
-              filter: "url(#glass-effect)",
-            }}
-          >
-            <div className="absolute top-0 left-1 right-1 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent rounded-full" />
-            <span className="text-white/90 text-base font-light relative z-10">Управляющая компания ООО «АМК Спец» · Амурская область, г. Благовещенск, ул. Кольцевая 43, офис 10</span>
-          </div>
-
           {/* Description */}
           <p className="text-base font-light text-white/70 mb-4 leading-relaxed">
             ООО «АМК Спец» специализируется на оперативном реагировании на внештатные ситуации в сфере ЖКХ.
