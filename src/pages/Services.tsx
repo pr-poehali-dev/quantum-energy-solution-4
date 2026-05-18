@@ -61,6 +61,12 @@ export default function Services() {
             <Icon name="Phone" size={14} />
             8 (4162) 39-20-90
           </a>
+          <a
+            href="tel:88003330703"
+            className="flex items-center gap-2 text-white/70 hover:text-white transition-colors text-sm"
+          >
+            8 800 333-07-03
+          </a>
           <button
             onClick={() => setModalOpen(true)}
             className="text-sm px-5 py-2 rounded-full border border-white/20 hover:bg-white/10 transition-all"
