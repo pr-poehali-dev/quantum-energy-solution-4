@@ -18,6 +18,9 @@ const houses = [
   { id: 12, address: 'ул. Шимановского, 68/5' },
   { id: 13, address: 'Верхнеблаговещенск, ул. Ленина, 21' },
   { id: 14, address: 'ул. Ленина, 187' },
+  { id: 15, address: 'ул. Амурская, 55/2', label: 'ТСЖ «Лазурит»' },
+  { id: 16, address: 'ул. Амурская, 55/3', label: 'ТСЖ «Лазурит»' },
+  { id: 17, address: 'ул. Пушкина, 89', label: 'ТСЖ «Лазурит»' },
 ]
 
 export default function Owners() {
@@ -76,6 +79,9 @@ export default function Owners() {
                 </div>
                 <div>
                   <div className="font-medium text-sm">г. Благовещенск, {house.address}</div>
+                  {house.label && (
+                    <div className="text-white/40 text-xs mt-0.5">{house.label}</div>
+                  )}
                 </div>
               </div>
               <Icon name="ChevronRight" size={16} className="text-white/30" />
