@@ -38,6 +38,12 @@ const documents = [
     description: '675000, Амурская область, г. Благовещенск, ул. Кольцевая, 43, офис 10',
     icon: 'MapPin',
   },
+  {
+    title: 'Многоканальный телефон',
+    description: '8 800 333-07-03',
+    icon: 'Phone',
+    link: 'tel:88003330703',
+  },
 ]
 
 export default function About() {
@@ -151,9 +157,13 @@ export default function About() {
                 </div>
                 <div className="flex-1">
                   <div className="text-sm font-medium">{doc.title}</div>
-                  <div className="text-white/50 text-xs mt-0.5">{doc.description}</div>
+                  {doc.link ? (
+                    <a href={doc.link} className="text-white/70 hover:text-white transition-colors text-xs mt-0.5 block">{doc.description}</a>
+                  ) : (
+                    <div className="text-white/50 text-xs mt-0.5">{doc.description}</div>
+                  )}
                 </div>
-                <div className="text-white/20 text-xs">по запросу</div>
+                {!doc.link && <div className="text-white/20 text-xs">по запросу</div>}
               </div>
             ))}
           </div>
