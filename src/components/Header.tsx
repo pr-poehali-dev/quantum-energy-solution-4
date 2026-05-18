@@ -24,7 +24,7 @@ export default function Header() {
               </div>
             </div>
             <div className="flex flex-col leading-tight">
-              <span className="text-white/50 text-xs uppercase tracking-wide">Многоканальный</span>
+              <span className="text-white/50 text-xs uppercase tracking-wide">Федеральный номер</span>
               <a
                 href="tel:88003330703"
                 className="text-white hover:text-neutral-400 transition-colors duration-300 text-sm font-medium"

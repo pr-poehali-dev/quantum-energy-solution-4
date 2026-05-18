@@ -39,7 +39,7 @@ const documents = [
     icon: 'MapPin',
   },
   {
-    title: 'Многоканальный телефон',
+    title: 'Федеральный номер',
     description: '8 800 333-07-03',
     icon: 'Phone',
     link: 'tel:88003330703',
