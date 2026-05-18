@@ -33,7 +33,7 @@ export default function Header() {
             href="#partners"
             className="text-white hover:text-neutral-400 transition-colors duration-300 uppercase text-sm"
           >
-            Партнёрам
+            О нас
           </a>
           <button
             onClick={() => navigate('/works')}
