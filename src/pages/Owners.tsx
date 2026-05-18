@@ -50,7 +50,7 @@ export default function Owners() {
 
       {/* Content */}
       <main className="max-w-3xl mx-auto px-6 py-12">
-        <h1 className="text-3xl font-light mb-2">Собственникам</h1>
+        <h1 className="text-3xl font-light mb-2">Наши объекты</h1>
         <p className="text-white/50 text-sm mb-10">Список домов, обслуживаемых ООО «АМК Спец»</p>
 
         <div className="flex flex-col gap-4">
