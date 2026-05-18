@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Icon from '@/components/ui/icon'
 import ContactModal from '@/components/ContactModal'
+import MaxButton from '@/components/MaxButton'
 
 const works = [
   {
@@ -132,6 +133,7 @@ export default function Works() {
       )}
 
       <ContactModal open={modalOpen} onClose={() => setModalOpen(false)} />
+      <MaxButton />
     </div>
   )
 }

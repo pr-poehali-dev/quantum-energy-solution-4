@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Icon from '@/components/ui/icon'
 import ContactModal from '@/components/ContactModal'
+import MaxButton from '@/components/MaxButton'
 
 const houses = [
   { id: 1, address: 'ул. Кольцевая, 32' },
@@ -104,6 +105,7 @@ export default function Owners() {
       </main>
 
       <ContactModal open={modalOpen} onClose={() => setModalOpen(false)} />
+      <MaxButton />
     </div>
   )
 }
