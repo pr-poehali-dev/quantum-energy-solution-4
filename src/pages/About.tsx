@@ -33,6 +33,11 @@ const documents = [
     description: 'ИНН: 2801258848 · ОГРН: 1202800005704',
     icon: 'FileCheck',
   },
+  {
+    title: 'Юридический адрес',
+    description: 'Амурская область, г. Благовещенск, ул. Калинина, 142, кв. 136',
+    icon: 'MapPin',
+  },
 ]
 
 export default function About() {
