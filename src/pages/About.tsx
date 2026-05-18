@@ -34,7 +34,7 @@ const documents = [
     icon: 'FileCheck',
   },
   {
-    title: 'Юридический адрес',
+    title: 'Адрес',
     description: 'Амурская область, г. Благовещенск, ул. Калинина, 142, кв. 136',
     icon: 'MapPin',
   },
