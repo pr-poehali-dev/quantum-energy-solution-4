@@ -1,6 +1,8 @@
 import Icon from '@/components/ui/icon'
+import { useNavigate } from 'react-router-dom'
 
 export default function Header() {
+  const navigate = useNavigate()
   return (
     <header className="absolute top-0 left-0 right-0 z-11 p-6">
       <div className="flex justify-between items-center">
@@ -21,12 +23,12 @@ export default function Header() {
             </div>
           </div>
           <span className="text-white/20">|</span>
-          <a
-            href="#owners"
-            className="text-white hover:text-neutral-400 transition-colors duration-300 uppercase text-sm"
+          <button
+            onClick={() => navigate('/owners')}
+            className="text-white hover:text-neutral-400 transition-colors duration-300 uppercase text-sm cursor-pointer"
           >
             Собственникам
-          </a>
+          </button>
           <a
             href="#partners"
             className="text-white hover:text-neutral-400 transition-colors duration-300 uppercase text-sm"
