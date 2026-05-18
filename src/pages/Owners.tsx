@@ -21,6 +21,9 @@ const houses = [
   { id: 15, address: 'ул. Амурская, 55/2', label: 'ТСЖ «Лазурит»' },
   { id: 16, address: 'ул. Амурская, 55/3', label: 'ТСЖ «Лазурит»' },
   { id: 17, address: 'ул. Пушкина, 89', label: 'ТСЖ «Лазурит»' },
+  { id: 18, address: 'ул. Амурская, 14/3' },
+  { id: 19, address: 'ул. Красноармейская, 63/2' },
+  { id: 20, address: 'ул. Политехническая, 79' },
 ]
 
 export default function Owners() {
