@@ -52,6 +52,12 @@ export default function Header() {
           >
             Фото
           </button>
+          <button
+            onClick={() => navigate('/reviews')}
+            className="text-white hover:text-neutral-400 transition-colors duration-300 uppercase text-sm cursor-pointer"
+          >
+            Отзывы
+          </button>
         </nav>
       </div>
     </header>
