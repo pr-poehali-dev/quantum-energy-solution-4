@@ -17,11 +17,11 @@ export default function HeroContent() {
             }}
           >
             <div className="absolute top-0 left-1 right-1 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent rounded-full" />
-            <span className="text-white/90 text-xs font-light relative z-10">Управляющая компания ООО «АМК Спец» · Амурская область, г. Благовещенск, ул. Кольцевая 43, офис 10</span>
+            <span className="text-white/90 text-sm font-light relative z-10">Управляющая компания ООО «АМК Спец» · Амурская область, г. Благовещенск, ул. Кольцевая 43, офис 10</span>
           </div>
 
           {/* Description */}
-          <p className="text-xs font-light text-white/70 mb-4 leading-relaxed">
+          <p className="text-sm font-light text-white/70 mb-4 leading-relaxed">
             ООО «АМК Спец» специализируется на оперативном реагировании на внештатные ситуации в сфере ЖКХ.
             Обеспечиваем надёжную поддержку многоквартирных домов и организаций — современное оборудование,
             опытные специалисты и бесперебойная работа всех инженерных систем.
