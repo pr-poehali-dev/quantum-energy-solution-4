@@ -112,7 +112,7 @@ export default function ContactModal({ open, onClose, mode = 'contact', onSucces
               {isReview && (
                 <div className="flex flex-col gap-1.5">
                   <span className="text-white/50 text-xs">Ваша оценка</span>
-                  <div className="flex gap-2">
+                  <div className="flex gap-1 sm:gap-2">
                     {Array.from({ length: 5 }).map((_, i) => (
                       <button
                         key={i}
@@ -120,11 +120,11 @@ export default function ContactModal({ open, onClose, mode = 'contact', onSucces
                         onClick={() => setRating(i + 1)}
                         onMouseEnter={() => setHoverRating(i + 1)}
                         onMouseLeave={() => setHoverRating(0)}
-                        className="transition-transform hover:scale-110"
+                        className="transition-transform active:scale-110 hover:scale-110 p-1"
                       >
                         <Icon
                           name="Star"
-                          size={28}
+                          size={24}
                           className={i < (hoverRating || rating) ? 'text-yellow-400' : 'text-white/20'}
                         />
                       </button>

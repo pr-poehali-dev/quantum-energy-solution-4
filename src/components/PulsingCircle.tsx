@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 
 export default function PulsingCircle() {
   return (
-    <div className="absolute bottom-8 right-8 z-30">
+    <div className="absolute bottom-24 right-4 sm:bottom-8 sm:right-8 z-30">
       <div className="relative w-20 h-20 flex items-center justify-center">
         {/* Pulsing Border Circle */}
         <PulsingBorder

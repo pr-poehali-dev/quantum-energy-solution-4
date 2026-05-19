@@ -62,7 +62,7 @@ export default function Reviews() {
     <div className="min-h-screen bg-neutral-950 text-white">
       <PageHeader onContact={() => setModalOpen(true)} />
 
-      <main className="max-w-3xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+      <main className="max-w-3xl mx-auto px-4 sm:px-6 py-8 sm:py-12 pb-24 sm:pb-12">
         <h1 className="text-2xl sm:text-3xl font-light mb-2">Отзывы</h1>
         <p className="text-white/50 text-sm mb-8 sm:mb-10">Что говорят жильцы об ООО «АМК Спец»</p>
 
@@ -78,7 +78,7 @@ export default function Reviews() {
                     <Icon name="User" size={16} className="text-white/50" />
                   </div>
                   <div>
-                    <div className="text-xs sm:text-sm font-medium">{review.name}</div>
+                    <div className="text-sm font-medium">{review.name}</div>
                     <div className="text-white/40 text-xs mt-0.5">{review.address}</div>
                   </div>
                 </div>
@@ -96,7 +96,7 @@ export default function Reviews() {
                   <div className="text-white/30 text-xs">{review.date}</div>
                 </div>
               </div>
-              <p className="text-white/60 text-xs sm:text-sm leading-relaxed">{review.text}</p>
+              <p className="text-white/60 text-sm leading-relaxed">{review.text}</p>
             </div>
           ))}
         </div>

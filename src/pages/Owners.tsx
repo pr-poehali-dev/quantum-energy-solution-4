@@ -41,7 +41,7 @@ export default function Owners() {
     <div className="min-h-screen bg-neutral-950 text-white">
       <PageHeader onContact={() => setModalOpen(true)} />
 
-      <main className="max-w-3xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+      <main className="max-w-3xl mx-auto px-4 sm:px-6 py-8 sm:py-12 pb-24 sm:pb-12">
         <h1 className="text-2xl sm:text-3xl font-light mb-2">Наши объекты</h1>
         <p className="text-white/50 text-sm mb-8 sm:mb-10">Список домов, обслуживаемых ООО «АМК Спец»</p>
 
@@ -56,7 +56,7 @@ export default function Owners() {
                   <Icon name="Building2" size={16} className="text-white/70" />
                 </div>
                 <div>
-                  <div className="font-medium text-xs sm:text-sm">г. Благовещенск, {house.address}</div>
+                  <div className="font-medium text-sm">г. Благовещенск, {house.address}</div>
                   {house.label && (
                     <div className="text-white/40 text-xs mt-0.5">{house.label}</div>
                   )}

@@ -52,7 +52,7 @@ export default function Services() {
     <div className="min-h-screen bg-neutral-950 text-white">
       <PageHeader onContact={() => setModalOpen(true)} />
 
-      <main className="max-w-3xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+      <main className="max-w-3xl mx-auto px-4 sm:px-6 py-8 sm:py-12 pb-24 sm:pb-12">
         <h1 className="text-2xl sm:text-3xl font-light mb-2">Наши услуги</h1>
         <p className="text-white/50 text-sm mb-8 sm:mb-10">Полный спектр услуг по обслуживанию жилья и инженерных систем</p>
 
