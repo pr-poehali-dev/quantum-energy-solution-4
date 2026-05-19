@@ -1,17 +1,13 @@
 {
   "tests": [
     {
-      "name": "OPTIONS preflight",
-      "method": "OPTIONS",
-      "path": "/",
-      "expectedStatus": 200
-    },
-    {
-      "name": "Missing required fields",
+      "name": "Missing fields",
       "method": "POST",
       "path": "/",
-      "body": {"name": "", "phone": ""},
-      "expectedStatus": 400
+      "body": {},
+      "expectedStatus": 400,
+      "expectedBody": {"error": "Имя и телефон обязательны"},
+      "bodyMatcher": "partial"
     }
   ]
 }

@@ -5,9 +5,10 @@ interface ContactModalProps {
   open: boolean
   onClose: () => void
   mode?: 'contact' | 'review'
+  onSuccess?: () => void
 }
 
-export default function ContactModal({ open, onClose, mode = 'contact' }: ContactModalProps) {
+export default function ContactModal({ open, onClose, mode = 'contact', onSuccess }: ContactModalProps) {
   const isReview = mode === 'review'
   const [name, setName] = useState('')
   const [phone, setPhone] = useState('')
@@ -26,11 +27,12 @@ export default function ContactModal({ open, onClose, mode = 'contact' }: Contac
       const res = await fetch('https://functions.poehali.dev/539eaa3a-05e3-4f45-979a-4b2fe0f0b87c', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, phone, message }),
+        body: JSON.stringify({ name, phone, message, mode: isReview ? 'review' : 'contact' }),
       })
       const data = await res.json()
       if (res.ok && data.success) {
         setSuccess(true)
+        if (onSuccess) onSuccess()
       } else {
         setError(data.error || 'Ошибка отправки. Попробуйте позже.')
       }

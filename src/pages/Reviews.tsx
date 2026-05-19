@@ -1,13 +1,13 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Icon from '@/components/ui/icon'
 import ContactModal from '@/components/ContactModal'
 import PageHeader from '@/components/PageHeader'
 import MaxButton from '@/components/MaxButton'
 import CallButton from '@/components/CallButton'
 
-const reviews = [
+const STATIC_REVIEWS = [
   {
-    id: 1,
+    id: -1,
     name: 'Иванова Марина Сергеевна',
     address: 'ул. Кольцевая, 32',
     rating: 5,
@@ -15,7 +15,7 @@ const reviews = [
     text: 'Очень довольна работой управляющей компании. Всегда оперативно реагируют на заявки, во дворе чисто, подъезды в порядке. Диспетчерская служба работает круглосуточно — всегда можно дозвониться.',
   },
   {
-    id: 2,
+    id: -2,
     name: 'Петров Алексей Николаевич',
     address: 'ул. Чайковского, 155',
     rating: 5,
@@ -23,7 +23,7 @@ const reviews = [
     text: 'Обратился по поводу аварии в системе отопления — приехали в течение часа, всё устранили быстро и качественно. Спасибо мастерам за профессионализм!',
   },
   {
-    id: 3,
+    id: -3,
     name: 'Соколова Елена Викторовна',
     address: 'ул. Ломоносова, 176',
     rating: 4,
@@ -34,6 +34,29 @@ const reviews = [
 
 export default function Reviews() {
   const [modalOpen, setModalOpen] = useState(false)
+  const [reviews, setReviews] = useState(STATIC_REVIEWS)
+
+  const loadReviews = async () => {
+    try {
+      const res = await fetch('https://functions.poehali.dev/134a3901-15b0-4e54-8ade-26430a5bcd87')
+      const data = await res.json()
+      if (data.reviews && data.reviews.length > 0) {
+        const dbReviews = data.reviews.map((r: { id: number; name: string; message: string; rating: number; created_at: string }) => ({
+          id: r.id,
+          name: r.name,
+          address: '',
+          rating: r.rating,
+          date: r.created_at,
+          text: r.message,
+        }))
+        setReviews([...dbReviews, ...STATIC_REVIEWS])
+      }
+    } catch (e) { void e }
+  }
+
+  useEffect(() => {
+    loadReviews()
+  }, [])
 
   return (
     <div className="min-h-screen bg-neutral-950 text-white">
@@ -89,7 +112,7 @@ export default function Reviews() {
         </div>
       </main>
 
-      <ContactModal open={modalOpen} onClose={() => setModalOpen(false)} mode="review" />
+      <ContactModal open={modalOpen} onClose={() => setModalOpen(false)} mode="review" onSuccess={loadReviews} />
       <MaxButton />
       <CallButton />
     </div>
