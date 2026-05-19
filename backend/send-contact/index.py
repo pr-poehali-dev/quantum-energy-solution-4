@@ -27,6 +27,7 @@ def handler(event: dict, context) -> dict:
     phone = body.get('phone', '').strip()
     message = body.get('message', '').strip()
     mode = body.get('mode', 'contact')
+    rating = int(body.get('rating', 5))
 
     if not name or not phone:
         return {
@@ -43,8 +44,8 @@ def handler(event: dict, context) -> dict:
             database=p.path.lstrip('/')
         )
         conn.run(
-            "INSERT INTO reviews (name, phone, message) VALUES (:name, :phone, :message)",
-            name=name, phone=phone, message=message
+            "INSERT INTO reviews (name, phone, message, rating) VALUES (:name, :phone, :message, :rating)",
+            name=name, phone=phone, message=message, rating=rating
         )
         conn.close()
 

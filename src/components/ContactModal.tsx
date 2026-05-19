@@ -13,6 +13,8 @@ export default function ContactModal({ open, onClose, mode = 'contact', onSucces
   const [name, setName] = useState('')
   const [phone, setPhone] = useState('')
   const [message, setMessage] = useState('')
+  const [rating, setRating] = useState(5)
+  const [hoverRating, setHoverRating] = useState(0)
   const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState(false)
   const [error, setError] = useState('')
@@ -27,7 +29,7 @@ export default function ContactModal({ open, onClose, mode = 'contact', onSucces
       const res = await fetch('https://functions.poehali.dev/539eaa3a-05e3-4f45-979a-4b2fe0f0b87c', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, phone, message, mode: isReview ? 'review' : 'contact' }),
+        body: JSON.stringify({ name, phone, message, rating, mode: isReview ? 'review' : 'contact' }),
       })
       const data = await res.json()
       if (res.ok && data.success) {
@@ -47,6 +49,8 @@ export default function ContactModal({ open, onClose, mode = 'contact', onSucces
     setName('')
     setPhone('')
     setMessage('')
+    setRating(5)
+    setHoverRating(0)
     setSuccess(false)
     setError('')
     onClose()
@@ -105,6 +109,29 @@ export default function ContactModal({ open, onClose, mode = 'contact', onSucces
                 required
                 className="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm placeholder-white/30 focus:outline-none focus:border-white/30 transition-colors"
               />
+              {isReview && (
+                <div className="flex flex-col gap-1.5">
+                  <span className="text-white/50 text-xs">Ваша оценка</span>
+                  <div className="flex gap-2">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <button
+                        key={i}
+                        type="button"
+                        onClick={() => setRating(i + 1)}
+                        onMouseEnter={() => setHoverRating(i + 1)}
+                        onMouseLeave={() => setHoverRating(0)}
+                        className="transition-transform hover:scale-110"
+                      >
+                        <Icon
+                          name="Star"
+                          size={28}
+                          className={i < (hoverRating || rating) ? 'text-yellow-400' : 'text-white/20'}
+                        />
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
               <textarea
                 placeholder="Сообщение (необязательно)"
                 value={message}

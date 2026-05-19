@@ -4,7 +4,7 @@
       "name": "Missing fields",
       "method": "POST",
       "path": "/",
-      "body": {},
+      "body": {"name": "", "phone": ""},
       "expectedStatus": 400,
       "expectedBody": {"error": "Имя и телефон обязательны"},
       "bodyMatcher": "partial"
