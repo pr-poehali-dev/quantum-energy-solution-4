@@ -4,9 +4,11 @@ import Icon from '@/components/ui/icon'
 interface ContactModalProps {
   open: boolean
   onClose: () => void
+  mode?: 'contact' | 'review'
 }
 
-export default function ContactModal({ open, onClose }: ContactModalProps) {
+export default function ContactModal({ open, onClose, mode = 'contact' }: ContactModalProps) {
+  const isReview = mode === 'review'
   const [name, setName] = useState('')
   const [phone, setPhone] = useState('')
   const [message, setMessage] = useState('')
@@ -70,8 +72,8 @@ export default function ContactModal({ open, onClose }: ContactModalProps) {
             <div className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center mx-auto mb-4">
               <Icon name="Check" size={28} className="text-white" />
             </div>
-            <h3 className="text-white text-xl font-medium mb-2">Заявка отправлена!</h3>
-            <p className="text-white/60 text-sm">Мы свяжемся с вами в ближайшее время.</p>
+            <h3 className="text-white text-xl font-medium mb-2">{isReview ? 'Отзыв отправлен!' : 'Заявка отправлена!'}</h3>
+            <p className="text-white/60 text-sm">{isReview ? 'Спасибо за ваш отзыв!' : 'Мы свяжемся с вами в ближайшее время.'}</p>
             <button
               onClick={handleClose}
               className="mt-6 px-8 py-3 rounded-full bg-white text-black text-xs font-normal hover:bg-white/90 transition-all"
@@ -81,8 +83,8 @@ export default function ContactModal({ open, onClose }: ContactModalProps) {
           </div>
         ) : (
           <>
-            <h3 className="text-white text-xl font-medium mb-1">Связаться с нами</h3>
-            <p className="text-white/50 text-xs mb-6">Оставьте заявку — ответим в кратчайшие сроки</p>
+            <h3 className="text-white text-xl font-medium mb-1">{isReview ? 'Оставить отзыв' : 'Связаться с нами'}</h3>
+            <p className="text-white/50 text-xs mb-6">{isReview ? 'Поделитесь своим мнением о нашей работе' : 'Оставьте заявку — ответим в кратчайшие сроки'}</p>
 
             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
               <input
@@ -114,7 +116,7 @@ export default function ContactModal({ open, onClose }: ContactModalProps) {
                 disabled={loading}
                 className="px-8 py-3 rounded-full bg-white text-black text-xs font-normal hover:bg-white/90 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {loading ? 'Отправляем...' : 'Отправить заявку'}
+                {loading ? 'Отправляем...' : isReview ? 'Отправить отзыв' : 'Отправить заявку'}
               </button>
             </form>
           </>

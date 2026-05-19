@@ -89,7 +89,7 @@ export default function Reviews() {
         </div>
       </main>
 
-      <ContactModal open={modalOpen} onClose={() => setModalOpen(false)} />
+      <ContactModal open={modalOpen} onClose={() => setModalOpen(false)} mode="review" />
       <MaxButton />
       <CallButton />
     </div>
