@@ -3,8 +3,7 @@ import os
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-import pg8000.native
-import urllib.parse
+import psycopg2
 
 
 def handler(event: dict, context) -> dict:
@@ -37,16 +36,14 @@ def handler(event: dict, context) -> dict:
         }
 
     if mode == 'review':
-        p = urllib.parse.urlparse(os.environ['DATABASE_URL'])
-        conn = pg8000.native.Connection(
-            user=p.username, password=p.password,
-            host=p.hostname, port=p.port or 5432,
-            database=p.path.lstrip('/')
-        )
-        conn.run(
-            "INSERT INTO reviews (name, phone, message, rating) VALUES (:name, :phone, :message, :rating)",
-            name=name, phone=phone, message=message, rating=rating
-        )
+        conn = psycopg2.connect(os.environ['DATABASE_URL'])
+        cur = conn.cursor()
+        name_s = name.replace("'", "''")
+        phone_s = phone.replace("'", "''")
+        message_s = message.replace("'", "''")
+        cur.execute(f"INSERT INTO reviews (name, phone, message, rating) VALUES ('{name_s}', '{phone_s}', '{message_s}', {int(rating)})")
+        conn.commit()
+        cur.close()
         conn.close()
 
     smtp_user = 'ooo.yk.amk.spec@yandex.ru'

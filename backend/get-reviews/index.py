@@ -1,7 +1,6 @@
 import json
 import os
-import urllib.parse
-import pg8000.native
+import psycopg2
 
 
 def handler(event: dict, context) -> dict:
@@ -19,15 +18,11 @@ def handler(event: dict, context) -> dict:
             'body': ''
         }
 
-    p = urllib.parse.urlparse(os.environ['DATABASE_URL'])
-    conn = pg8000.native.Connection(
-        user=p.username, password=p.password,
-        host=p.hostname, port=p.port or 5432,
-        database=p.path.lstrip('/')
-    )
-    rows = conn.run(
-        "SELECT id, name, message, rating, created_at FROM reviews ORDER BY created_at DESC"
-    )
+    conn = psycopg2.connect(os.environ['DATABASE_URL'])
+    cur = conn.cursor()
+    cur.execute("SELECT id, name, message, rating, created_at FROM reviews ORDER BY created_at DESC")
+    rows = cur.fetchall()
+    cur.close()
     conn.close()
 
     reviews = []
