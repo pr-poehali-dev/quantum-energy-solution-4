@@ -20,7 +20,7 @@ export default function PageHeader({ onContact }: PageHeaderProps) {
       <img
         src="https://cdn.poehali.dev/files/ffba9728-884f-4572-8042-4e9222c47529.png"
         alt="ООО АМК Спец"
-        className="h-8 sm:h-10 w-auto brightness-0 invert cursor-pointer"
+        className="h-8 sm:h-10 w-auto invert cursor-pointer"
         onClick={() => navigate('/')}
       />
       <div className="flex items-center gap-2 sm:gap-4">
