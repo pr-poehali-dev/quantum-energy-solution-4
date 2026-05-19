@@ -72,13 +72,13 @@ export default function Services() {
                 <Icon name={service.icon} size={20} className="text-white/80" />
               </div>
               <div>
-                <div className="font-medium text-sm mb-1 flex items-center gap-2 flex-wrap">
+                <div className="font-medium text-sm sm:text-base mb-1 flex items-center gap-2 flex-wrap">
                   {service.title}
                   {service.highlight && (
                     <span className="text-xs bg-white/20 px-2 py-0.5 rounded-full font-normal">24/7</span>
                   )}
                 </div>
-                <div className="text-white/50 text-xs leading-relaxed">{service.description}</div>
+                <div className="text-white/50 text-xs sm:text-sm leading-relaxed">{service.description}</div>
               </div>
             </div>
           ))}
@@ -89,14 +89,14 @@ export default function Services() {
           <div className="flex items-center justify-center gap-3 flex-wrap">
             <a
               href="tel:84162392090"
-              className="flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full border border-white/20 text-sm hover:bg-white/10 transition-all"
+              className="flex items-center gap-2 px-4 sm:px-6 py-3 rounded-full border border-white/20 text-sm hover:bg-white/10 transition-all"
             >
               <Icon name="Phone" size={14} />
               8 (4162) 39-20-90
             </a>
             <button
               onClick={() => setModalOpen(true)}
-              className="px-4 sm:px-6 py-2.5 sm:py-3 rounded-full bg-white text-black text-sm font-normal hover:bg-white/90 transition-all"
+              className="px-4 sm:px-6 py-3 rounded-full bg-white text-black text-sm font-normal hover:bg-white/90 transition-all"
             >
               Оставить заявку
             </button>

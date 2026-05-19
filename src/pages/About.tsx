@@ -55,7 +55,7 @@ export default function About() {
     <div className="min-h-screen bg-neutral-950 text-white">
       <PageHeader onContact={() => setModalOpen(true)} />
 
-      <main className="max-w-3xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+      <main className="max-w-3xl mx-auto px-4 sm:px-6 py-8 sm:py-12 pb-24 sm:pb-12">
         <h1 className="text-2xl sm:text-3xl font-light mb-2">О нас</h1>
         <p className="text-white/50 text-sm mb-8 sm:mb-12">Управляющая компания ООО «АМК Спец»</p>
 
@@ -73,7 +73,7 @@ export default function About() {
               <div className="h-px flex-1 bg-white/10" />
               <div className="text-xs sm:text-sm text-white/40">по сей день</div>
             </div>
-            <p className="text-white/70 text-sm leading-relaxed">
+            <p className="text-white/70 text-sm sm:text-base leading-relaxed">
               ООО «АМК Спец» основано 10 августа 2020 года. С первого дня работы компания оказывает полный спектр услуг по управлению и обслуживанию многоквартирных домов — от технического содержания общего имущества до круглосуточной аварийной службы. За время работы сформирована надёжная команда специалистов, которая заботится о комфорте жильцов каждый день.
             </p>
           </div>
@@ -91,14 +91,14 @@ export default function About() {
             {team.map((member, i) => (
               <div
                 key={i}
-                className="flex items-center gap-3 sm:gap-5 bg-white/5 border border-white/10 rounded-2xl px-4 sm:px-6 py-3 sm:py-4"
+                className="flex items-center gap-3 sm:gap-5 bg-white/5 border border-white/10 rounded-2xl px-4 sm:px-6 py-4 sm:py-5"
               >
                 <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
                   <Icon name="User" size={20} className="text-white/50" />
                 </div>
                 <div>
-                  <div className="text-sm font-medium">{member.name}</div>
-                  <div className="text-white/50 text-xs mt-0.5">{member.role}</div>
+                  <div className="text-sm sm:text-base font-medium">{member.name}</div>
+                  <div className="text-white/50 text-xs sm:text-sm mt-0.5">{member.role}</div>
                   {member.note && (
                     <div className="text-white/30 text-xs mt-1 italic">{member.note}</div>
                   )}
@@ -126,7 +126,7 @@ export default function About() {
                   <Icon name={doc.icon} size={20} className="text-white/70" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <div className="text-sm font-medium">{doc.title}</div>
+                  <div className="text-sm sm:text-base font-medium">{doc.title}</div>
                   {doc.link ? (
                     <a href={doc.link} className="text-white/70 hover:text-white transition-colors text-xs mt-0.5 block">{doc.description}</a>
                   ) : (
@@ -148,14 +148,14 @@ export default function About() {
           <div className="flex items-center justify-center gap-3 flex-wrap">
             <a
               href="tel:84162392090"
-              className="flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full border border-white/20 text-sm hover:bg-white/10 transition-all"
+              className="flex items-center gap-2 px-4 sm:px-6 py-3 rounded-full border border-white/20 text-sm hover:bg-white/10 transition-all"
             >
               <Icon name="Phone" size={14} />
               8 (4162) 39-20-90
             </a>
             <button
               onClick={() => setModalOpen(true)}
-              className="px-4 sm:px-6 py-2.5 sm:py-3 rounded-full bg-white text-black text-sm font-normal hover:bg-white/90 transition-all"
+              className="px-4 sm:px-6 py-3 rounded-full bg-white text-black text-sm font-normal hover:bg-white/90 transition-all"
             >
               Оставить заявку
             </button>

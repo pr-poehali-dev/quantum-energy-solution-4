@@ -28,13 +28,13 @@ export default function PageHeader({ onContact }: PageHeaderProps) {
         </a>
         <a
           href="tel:84162392090"
-          className="sm:hidden w-9 h-9 flex items-center justify-center rounded-full bg-white/10 text-white/70 hover:text-white transition-colors"
+          className="sm:hidden w-10 h-10 flex items-center justify-center rounded-full bg-white/10 text-white/70 hover:text-white transition-colors"
         >
           <Icon name="Phone" size={16} />
         </a>
         <button
           onClick={onContact}
-          className="text-xs sm:text-sm px-3 sm:px-5 py-1.5 sm:py-2 rounded-full border border-white/20 hover:bg-white/10 transition-all flex-shrink-0"
+          className="text-xs sm:text-sm px-3 sm:px-5 py-2.5 sm:py-2 rounded-full border border-white/20 hover:bg-white/10 transition-all flex-shrink-0"
         >
           Связаться
         </button>

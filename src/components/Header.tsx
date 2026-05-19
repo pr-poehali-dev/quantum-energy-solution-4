@@ -77,21 +77,21 @@ export default function Header() {
       {/* Mobile menu */}
       {menuOpen && (
         <div className="md:hidden mt-3 bg-black/80 backdrop-blur-md rounded-2xl border border-white/10 p-4 flex flex-col gap-3">
-          <a href="tel:84162392090" className="flex items-center gap-3 text-white text-sm py-2">
+          <a href="tel:84162392090" className="flex items-center gap-3 text-white text-sm py-3">
             <Icon name="Phone" size={16} className="text-white/60" />
             8 (4162) 39-20-90
             <span className="text-white/40 text-xs ml-auto">24/7</span>
           </a>
-          <a href="tel:88003330703" className="flex items-center gap-3 text-white text-sm py-2">
+          <a href="tel:88003330703" className="flex items-center gap-3 text-white text-sm py-3">
             <Icon name="PhoneCall" size={16} className="text-white/60" />
             8 800 333-07-03
             <span className="text-white/40 text-xs ml-auto">бесплатно</span>
           </a>
           <div className="h-px bg-white/10" />
-          <button onClick={() => { navigate('/owners'); setMenuOpen(false) }} className="text-white text-sm py-2 text-left uppercase tracking-wide">МКД</button>
-          <button onClick={() => { navigate('/about'); setMenuOpen(false) }} className="text-white text-sm py-2 text-left uppercase tracking-wide">О нас</button>
-          <button onClick={() => { navigate('/works'); setMenuOpen(false) }} className="text-white text-sm py-2 text-left uppercase tracking-wide">Фото</button>
-          <button onClick={() => { navigate('/reviews'); setMenuOpen(false) }} className="text-white text-sm py-2 text-left uppercase tracking-wide">Отзывы</button>
+          <button onClick={() => { navigate('/owners'); setMenuOpen(false) }} className="text-white text-sm py-3 text-left uppercase tracking-wide">МКД</button>
+          <button onClick={() => { navigate('/about'); setMenuOpen(false) }} className="text-white text-sm py-3 text-left uppercase tracking-wide">О нас</button>
+          <button onClick={() => { navigate('/works'); setMenuOpen(false) }} className="text-white text-sm py-3 text-left uppercase tracking-wide">Фото</button>
+          <button onClick={() => { navigate('/reviews'); setMenuOpen(false) }} className="text-white text-sm py-3 text-left uppercase tracking-wide">Отзывы</button>
         </div>
       )}
     </header>

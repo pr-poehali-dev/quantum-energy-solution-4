@@ -58,9 +58,9 @@ export default function Works() {
                 />
               </div>
               <div className="p-4 sm:p-5">
-                <div className="text-white/40 text-xs mb-1">{work.date}</div>
-                <div className="font-medium text-sm mb-1">{work.title}</div>
-                <div className="text-white/50 text-xs leading-relaxed">{work.description}</div>
+                <div className="text-white/40 text-xs sm:text-sm mb-1">{work.date}</div>
+                <div className="font-medium text-sm sm:text-base mb-1">{work.title}</div>
+                <div className="text-white/50 text-xs sm:text-sm leading-relaxed">{work.description}</div>
               </div>
             </div>
           ))}
