@@ -17,7 +17,12 @@ export default function PageHeader({ onContact }: PageHeaderProps) {
         <Icon name="ArrowLeft" size={16} />
         <span className="hidden xs:inline">На главную</span>
       </button>
-      <div className="text-xs sm:text-sm font-medium uppercase tracking-wide text-center">ООО «АМК Спец»</div>
+      <img
+        src="https://cdn.poehali.dev/files/ffba9728-884f-4572-8042-4e9222c47529.png"
+        alt="ООО АМК Спец"
+        className="h-8 sm:h-10 w-auto brightness-0 invert cursor-pointer"
+        onClick={() => navigate('/')}
+      />
       <div className="flex items-center gap-2 sm:gap-4">
         <a
           href="tel:84162392090"

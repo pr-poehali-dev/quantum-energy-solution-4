@@ -9,7 +9,12 @@ export default function Header() {
   return (
     <header className="absolute top-0 left-0 right-0 z-11 p-3 sm:p-6">
       <div className="flex justify-between items-center">
-        <div className="text-white text-xs sm:text-sm uppercase tracking-wide font-medium">ООО «АМК Спец»</div>
+        <img
+          src="https://cdn.poehali.dev/files/ffba9728-884f-4572-8042-4e9222c47529.png"
+          alt="ООО АМК Спец"
+          className="h-10 sm:h-12 w-auto brightness-0 invert cursor-pointer"
+          onClick={() => navigate('/')}
+        />
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-6 lg:gap-8">
