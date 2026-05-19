@@ -3,6 +3,7 @@ import Icon from '@/components/ui/icon'
 import ContactModal from '@/components/ContactModal'
 import PageHeader from '@/components/PageHeader'
 import MaxButton from '@/components/MaxButton'
+import CallButton from '@/components/CallButton'
 
 const houses = [
   { id: 1, address: 'ул. Кольцевая, 32' },
@@ -73,6 +74,7 @@ export default function Owners() {
 
       <ContactModal open={modalOpen} onClose={() => setModalOpen(false)} />
       <MaxButton />
+      <CallButton />
     </div>
   )
 }

@@ -3,6 +3,7 @@ import HeroContent from "@/components/HeroContent"
 import PulsingCircle from "@/components/PulsingCircle"
 import Header from "@/components/Header"
 import MaxButton from "@/components/MaxButton"
+import CallButton from '@/components/CallButton'
 
 const Index = () => {
   return (
@@ -11,6 +12,7 @@ const Index = () => {
       <HeroContent />
       <PulsingCircle />
       <MaxButton />
+      <CallButton />
     </ShaderBackground>
   )
 }

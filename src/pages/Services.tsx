@@ -3,6 +3,7 @@ import Icon from '@/components/ui/icon'
 import ContactModal from '@/components/ContactModal'
 import PageHeader from '@/components/PageHeader'
 import MaxButton from '@/components/MaxButton'
+import CallButton from '@/components/CallButton'
 
 const services = [
   {
@@ -105,6 +106,7 @@ export default function Services() {
 
       <ContactModal open={modalOpen} onClose={() => setModalOpen(false)} />
       <MaxButton />
+      <CallButton />
     </div>
   )
 }
