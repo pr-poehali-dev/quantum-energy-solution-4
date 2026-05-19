@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import Icon from '@/components/ui/icon'
 import ContactModal from '@/components/ContactModal'
+import PageHeader from '@/components/PageHeader'
 import MaxButton from '@/components/MaxButton'
 
 const works = [
@@ -29,7 +29,6 @@ const works = [
 ]
 
 export default function Works() {
-  const navigate = useNavigate()
   const [modalOpen, setModalOpen] = useState(false)
   const [selected, setSelected] = useState<number | null>(null)
 
@@ -37,59 +36,27 @@ export default function Works() {
 
   return (
     <div className="min-h-screen bg-neutral-950 text-white">
-      {/* Header */}
-      <header className="border-b border-white/10 px-6 py-4 flex items-center justify-between">
-        <button
-          onClick={() => navigate('/')}
-          className="flex items-center gap-2 text-white/60 hover:text-white transition-colors text-sm"
-        >
-          <Icon name="ArrowLeft" size={16} />
-          На главную
-        </button>
-        <div className="text-sm font-medium uppercase tracking-wide">ООО «АМК Спец»</div>
-        <div className="flex items-center gap-4">
-          <a
-            href="tel:84162392090"
-            className="flex items-center gap-2 text-white/70 hover:text-white transition-colors text-sm"
-          >
-            <Icon name="Phone" size={14} />
-            8 (4162) 39-20-90
-          </a>
-          <a
-            href="tel:88003330703"
-            className="flex items-center gap-2 text-white/70 hover:text-white transition-colors text-sm"
-          >
-            8 800 333-07-03
-          </a>
-          <button
-            onClick={() => setModalOpen(true)}
-            className="text-sm px-5 py-2 rounded-full border border-white/20 hover:bg-white/10 transition-all"
-          >
-            Связаться
-          </button>
-        </div>
-      </header>
+      <PageHeader onContact={() => setModalOpen(true)} />
 
-      {/* Content */}
-      <main className="max-w-5xl mx-auto px-6 py-12">
-        <h1 className="text-3xl font-light mb-2">Наши работы</h1>
-        <p className="text-white/50 text-sm mb-10">Примеры выполненных работ ООО «АМК Спец»</p>
+      <main className="max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+        <h1 className="text-2xl sm:text-3xl font-light mb-2">Наши работы</h1>
+        <p className="text-white/50 text-sm mb-8 sm:mb-10">Примеры выполненных работ ООО «АМК Спец»</p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
           {works.map((work) => (
             <div
               key={work.id}
               onClick={() => setSelected(work.id)}
               className="group bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-white/20 transition-all cursor-pointer"
             >
-              <div className="relative overflow-hidden h-52">
+              <div className="relative overflow-hidden h-44 sm:h-52">
                 <img
                   src={work.image}
                   alt={work.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              <div className="p-5">
+              <div className="p-4 sm:p-5">
                 <div className="text-white/40 text-xs mb-1">{work.date}</div>
                 <div className="font-medium text-sm mb-1">{work.title}</div>
                 <div className="text-white/50 text-xs leading-relaxed">{work.description}</div>
@@ -98,7 +65,7 @@ export default function Works() {
           ))}
         </div>
 
-        <p className="text-white/30 text-xs mt-10 text-center">
+        <p className="text-white/30 text-xs mt-8 sm:mt-10 text-center">
           Хотите заказать работы?{' '}
           <button onClick={() => setModalOpen(true)} className="underline hover:text-white/60 transition-colors">
             Свяжитесь с нами
@@ -109,21 +76,21 @@ export default function Works() {
       {/* Lightbox */}
       {selectedWork && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/80 backdrop-blur-sm"
           onClick={() => setSelected(null)}
         >
           <div
-            className="relative max-w-2xl w-full bg-neutral-900 rounded-2xl overflow-hidden border border-white/10"
+            className="relative max-w-lg sm:max-w-2xl w-full bg-neutral-900 rounded-2xl overflow-hidden border border-white/10"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={() => setSelected(null)}
-              className="absolute top-4 right-4 z-10 w-8 h-8 rounded-full bg-black/50 flex items-center justify-center text-white/60 hover:text-white transition-colors"
+              className="absolute top-3 right-3 z-10 w-10 h-10 rounded-full bg-black/50 flex items-center justify-center text-white/60 hover:text-white transition-colors"
             >
-              <Icon name="X" size={16} />
+              <Icon name="X" size={18} />
             </button>
-            <img src={selectedWork.image} alt={selectedWork.title} className="w-full object-cover max-h-96" />
-            <div className="p-6">
+            <img src={selectedWork.image} alt={selectedWork.title} className="w-full object-cover max-h-64 sm:max-h-96" />
+            <div className="p-4 sm:p-6">
               <div className="text-white/40 text-xs mb-1">{selectedWork.date}</div>
               <div className="font-medium mb-2">{selectedWork.title}</div>
               <div className="text-white/60 text-sm leading-relaxed">{selectedWork.description}</div>

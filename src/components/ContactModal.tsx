@@ -55,7 +55,7 @@ export default function ContactModal({ open, onClose }: ContactModalProps) {
     >
       <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
       <div
-        className="relative bg-neutral-900 border border-white/10 rounded-2xl p-8 w-full max-w-md shadow-2xl"
+        className="relative bg-neutral-900 border border-white/10 rounded-2xl p-5 sm:p-8 w-full max-w-md shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         <button

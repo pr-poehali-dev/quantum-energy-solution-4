@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import Icon from '@/components/ui/icon'
 import ContactModal from '@/components/ContactModal'
+import PageHeader from '@/components/PageHeader'
 import MaxButton from '@/components/MaxButton'
 
 const team = [
@@ -48,61 +48,29 @@ const documents = [
 ]
 
 export default function About() {
-  const navigate = useNavigate()
   const [modalOpen, setModalOpen] = useState(false)
 
   return (
     <div className="min-h-screen bg-neutral-950 text-white">
-      {/* Header */}
-      <header className="border-b border-white/10 px-6 py-4 flex items-center justify-between">
-        <button
-          onClick={() => navigate('/')}
-          className="flex items-center gap-2 text-white/60 hover:text-white transition-colors text-sm"
-        >
-          <Icon name="ArrowLeft" size={16} />
-          На главную
-        </button>
-        <div className="text-sm font-medium uppercase tracking-wide">ООО «АМК Спец»</div>
-        <div className="flex items-center gap-4">
-          <a
-            href="tel:84162392090"
-            className="flex items-center gap-2 text-white/70 hover:text-white transition-colors text-sm"
-          >
-            <Icon name="Phone" size={14} />
-            8 (4162) 39-20-90
-          </a>
-          <a
-            href="tel:88003330703"
-            className="flex items-center gap-2 text-white/70 hover:text-white transition-colors text-sm"
-          >
-            8 800 333-07-03
-          </a>
-          <button
-            onClick={() => setModalOpen(true)}
-            className="text-sm px-5 py-2 rounded-full border border-white/20 hover:bg-white/10 transition-all"
-          >
-            Связаться
-          </button>
-        </div>
-      </header>
+      <PageHeader onContact={() => setModalOpen(true)} />
 
-      <main className="max-w-3xl mx-auto px-6 py-12">
-        <h1 className="text-3xl font-light mb-2">О нас</h1>
-        <p className="text-white/50 text-sm mb-12">Управляющая компания ООО «АМК Спец»</p>
+      <main className="max-w-3xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+        <h1 className="text-2xl sm:text-3xl font-light mb-2">О нас</h1>
+        <p className="text-white/50 text-sm mb-8 sm:mb-12">Управляющая компания ООО «АМК Спец»</p>
 
         {/* История */}
-        <section className="mb-12">
-          <h2 className="text-lg font-medium mb-6 flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center">
+        <section className="mb-8 sm:mb-12">
+          <h2 className="text-lg font-medium mb-4 sm:mb-6 flex items-center gap-3">
+            <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0">
               <Icon name="History" size={16} className="text-white/70" />
             </div>
             История компании
           </h2>
-          <div className="bg-white/5 border border-white/10 rounded-2xl px-6 py-6">
-            <div className="flex items-center gap-4 mb-4">
-              <div className="text-4xl font-light text-white/30">2020</div>
+          <div className="bg-white/5 border border-white/10 rounded-2xl px-4 sm:px-6 py-4 sm:py-6">
+            <div className="flex items-center gap-3 sm:gap-4 mb-4">
+              <div className="text-2xl sm:text-4xl font-light text-white/30">2020</div>
               <div className="h-px flex-1 bg-white/10" />
-              <div className="text-sm text-white/40">по сей день</div>
+              <div className="text-xs sm:text-sm text-white/40">по сей день</div>
             </div>
             <p className="text-white/70 text-sm leading-relaxed">
               ООО «АМК Спец» основано 10 августа 2020 года. С первого дня работы компания оказывает полный спектр услуг по управлению и обслуживанию многоквартирных домов — от технического содержания общего имущества до круглосуточной аварийной службы. За время работы сформирована надёжная команда специалистов, которая заботится о комфорте жильцов каждый день.
@@ -111,9 +79,9 @@ export default function About() {
         </section>
 
         {/* Команда */}
-        <section className="mb-12">
-          <h2 className="text-lg font-medium mb-6 flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center">
+        <section className="mb-8 sm:mb-12">
+          <h2 className="text-lg font-medium mb-4 sm:mb-6 flex items-center gap-3">
+            <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0">
               <Icon name="Users" size={16} className="text-white/70" />
             </div>
             Команда
@@ -122,9 +90,9 @@ export default function About() {
             {team.map((member, i) => (
               <div
                 key={i}
-                className="flex items-center gap-5 bg-white/5 border border-white/10 rounded-2xl px-6 py-4"
+                className="flex items-center gap-3 sm:gap-5 bg-white/5 border border-white/10 rounded-2xl px-4 sm:px-6 py-3 sm:py-4"
               >
-                <div className="w-11 h-11 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
                   <Icon name="User" size={20} className="text-white/50" />
                 </div>
                 <div>
@@ -140,9 +108,9 @@ export default function About() {
         </section>
 
         {/* Документы */}
-        <section className="mb-12">
-          <h2 className="text-lg font-medium mb-6 flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center">
+        <section className="mb-8 sm:mb-12">
+          <h2 className="text-lg font-medium mb-4 sm:mb-6 flex items-center gap-3">
+            <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0">
               <Icon name="FolderOpen" size={16} className="text-white/70" />
             </div>
             Документы
@@ -151,20 +119,20 @@ export default function About() {
             {documents.map((doc, i) => (
               <div
                 key={i}
-                className="flex items-center gap-5 bg-white/5 border border-white/10 rounded-2xl px-6 py-4"
+                className="flex items-center gap-3 sm:gap-5 bg-white/5 border border-white/10 rounded-2xl px-4 sm:px-6 py-3 sm:py-4"
               >
-                <div className="w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0">
                   <Icon name={doc.icon} size={20} className="text-white/70" />
                 </div>
-                <div className="flex-1">
+                <div className="flex-1 min-w-0">
                   <div className="text-sm font-medium">{doc.title}</div>
                   {doc.link ? (
                     <a href={doc.link} className="text-white/70 hover:text-white transition-colors text-xs mt-0.5 block">{doc.description}</a>
                   ) : (
-                    <div className="text-white/50 text-xs mt-0.5">{doc.description}</div>
+                    <div className="text-white/50 text-xs mt-0.5 break-words">{doc.description}</div>
                   )}
                 </div>
-                {!doc.link && <div className="text-white/20 text-xs">по запросу</div>}
+                {!doc.link && <div className="text-white/20 text-xs hidden sm:block flex-shrink-0">по запросу</div>}
               </div>
             ))}
           </div>
@@ -176,17 +144,17 @@ export default function About() {
         {/* CTA */}
         <div className="mt-4 text-center">
           <p className="text-white/40 text-sm mb-4">Есть вопросы? Мы всегда на связи</p>
-          <div className="flex items-center justify-center gap-4 flex-wrap">
+          <div className="flex items-center justify-center gap-3 flex-wrap">
             <a
               href="tel:84162392090"
-              className="flex items-center gap-2 px-6 py-3 rounded-full border border-white/20 text-sm hover:bg-white/10 transition-all"
+              className="flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full border border-white/20 text-sm hover:bg-white/10 transition-all"
             >
               <Icon name="Phone" size={14} />
               8 (4162) 39-20-90
             </a>
             <button
               onClick={() => setModalOpen(true)}
-              className="px-6 py-3 rounded-full bg-white text-black text-sm font-normal hover:bg-white/90 transition-all"
+              className="px-4 sm:px-6 py-2.5 sm:py-3 rounded-full bg-white text-black text-sm font-normal hover:bg-white/90 transition-all"
             >
               Оставить заявку
             </button>
