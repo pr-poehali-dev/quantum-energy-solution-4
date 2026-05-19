@@ -14,7 +14,6 @@ const Index = () => {
 
 
       <MaxButton />
-      <CallButton />
     </ShaderBackground>
   )
 }
